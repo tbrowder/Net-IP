@@ -3,7 +3,7 @@ use Test;
 
 use Net::IP :ALL;
 
-plan 19;
+plan 21;
 
 # valid
 ok ip-is-ipv4('10.10.10.10'), '4 octets';
@@ -37,3 +37,7 @@ is ip-compress-address('00.023.255', 4), '0.23.255';
 # reverse
 is ip-reverse-address('00.023.255', 4), '255.23.0';
 is ip-reverse-address('042.00.023.255', 4), '255.23.0.42';
+
+#iptobin
+is   ip-iptobin('9.9.9.9', 4), '00001001000010010000100100001001';
+isnt ip-iptobin('9.9.9.9', 4), '11000011011100101010101010100101';
