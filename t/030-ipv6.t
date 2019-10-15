@@ -2,8 +2,9 @@ use v6;
 use Test;
 
 use Net::IP :ALL;
+use Number::More :ALL;
 
-plan 20;
+plan 22;
 
 # valid
 ok ip-is-ipv6 '1::1';
@@ -49,3 +50,12 @@ is ip-reverse-address('0001:00e0:0000:0000:0000:0000:0000:0001', 6),
 
 is ip-reverse-address('1:00e0::0001', 6),
   '1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.e.0.0.1.0.0.0';
+
+# conversions
+my $bin = '11011110101011011011111011101111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000';
+my $int = bin2dec $bin;
+my $ip  = 'dead:beef::'; # short version
+my $ip2 = ip-expand-address $ip, 6;
+is ip-ip2int($ip, 6), $int;
+
+is ip-int2ip($int, 6), $ip2;
