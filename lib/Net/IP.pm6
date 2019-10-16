@@ -4,9 +4,6 @@ use Number::More :bin2dec, :bin2hex, :dec2bin,
                  :hex2bin, :token-binary;
 use Text::More   :count-substrs;
 
-# file: ALL-SUBS.md
-# title: Subroutines Exported by the ':ALL' Tag
-
 # export a debug var for users
 our $DEBUG = False;
 BEGIN {
@@ -504,12 +501,11 @@ Params  : IP address
 Returns : True (yes) or False (no)
 
 }}
-sub ip-is-ipv6(Str:D $ip is copy --> Bool) is export(:ip-is-ipv6) {
-    # we don't use a constraint on the input here so we
+sub ip-is-ipv6(Str:D $ip is copy --> Bool) is export(:ip-is-ipv6) { # we don't use a constraint on the input here so we
     # can report specific problems for debugging
 
     # Count octets
-    # IPv4 must have from 1 to 8 octets (at least one colon)
+    # IPv6 must have from 1 to 8 octets (at least one colon)
     my $n = count-substrs($ip, ':');
     return False unless $n > 0 and $n < 8;
 
@@ -569,11 +565,11 @@ sub ip-is-ipv6(Str:D $ip is copy --> Bool) is export(:ip-is-ipv6) {
 
 Subroutine ip-int2ip
 Purpose : Convert an int to an IP address
-Params  : Int
+Params  : UInt, IP version
 Returns : IP address
 
 }}
-sub ip-int2ip(UInt:D $int, UInt $ip-version where &ip-version --> Str) is export(:ip-int2ip) {
+multi ip-int2ip(UInt:D $int, UInt $ip-version where &ip-version --> Str) is export(:ip-int2ip) {
     # convert to binary
     my $bin = dec2bin $int;
     # convert to IP
@@ -588,7 +584,8 @@ Params  : IP address
 Returns : Int
 
 }}
-sub ip-ip2int(Str:D $ip, UInt $ip-version where &ip-version --> UInt) is export(:ip-int2ip) {
+sub ip-ip2int(Str:D $ip --> UInt) is export(:ip-int2ip) {
+    my $ip-version = ip-is-ipv6($ip) ?? 6 !! 4;
     # convert to binary
     my $bin = ip-iptobin $ip, $ip-version;
     # convert to int

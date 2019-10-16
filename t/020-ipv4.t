@@ -43,6 +43,6 @@ is ip-reverse-address('042.00.023.255', 4), '255.23.0.42';
 my $bin = '11000011011100100101000000000000';
 my $int = bin2dec $bin;
 my $ip  = '195.114.80.0';
-is ip-ip2int($ip, 4), $int;
+is ip-ip2int($ip), $int;
 
 is ip-int2ip($int, 4), $ip;

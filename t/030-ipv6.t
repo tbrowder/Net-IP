@@ -56,6 +56,6 @@ my $bin = '110111101010110110111110111011110000000000000000000000000000000000000
 my $int = bin2dec $bin;
 my $ip  = 'dead:beef::'; # short version
 my $ip2 = ip-expand-address $ip, 6;
-is ip-ip2int($ip, 6), $int;
+is ip-ip2int($ip), $int;
 
 is ip-int2ip($int, 6), $ip2;
