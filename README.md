@@ -1,12 +1,23 @@
 [![Build Status](https://travis-ci.org/tbrowder/Net-IP-Perl6.svg?branch=master)](https://travis-ci.org/tbrowder/Net-IP-Perl6)
 
-# Net::IP
+# Net::IP (API version 2)
 
 This module is a beginning port of the Perl module `Net::IP` to the
 `Raku` programming language.
 
-## Synopsis:
+## Notes
 
+1. This API is not backwardly compatible with previous versions.
+
+2. All but three functions will die if an unknown IP format is presented
+for processing; those exceptions are: ip-is-ipv4, ip-is-ipv6, and ip-is-ip
+which return false if the argument is not known to be the tested version
+or to be a valid IP at all. 
+
+3. All X2ip functions require the IP version (4 or 6) to
+be provided.
+
+## Synopsis:
 
 ```
 #!/usr/bin/env perl6
