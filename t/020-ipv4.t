@@ -27,17 +27,17 @@ is ip-get-version('a.2.3.4'),   '0', 'ipv4?';
 is ip-get-version('1.2.3.4.5'), '0', 'ipv4?';
 
 # expand
-is ip-expand-address('1', 4),       '1.0.0.0';
-is ip-expand-address('1.2', 4),     '1.2.0.0';
-is ip-expand-address('1.2.3', 4),   '1.2.3.0';
-is ip-expand-address('1.2.3.4', 4), '1.2.3.4';
+is ip-expand-address('1'),       '1.0.0.0';
+is ip-expand-address('1.2'),     '1.2.0.0';
+is ip-expand-address('1.2.3'),   '1.2.3.0';
+is ip-expand-address('1.2.3.4'), '1.2.3.4';
 
-# comprsee
-is ip-compress-address('00.023.255', 4), '0.23.255';
+# compress
+is ip-compress-address('00.023.255'), '0.23.255';
 
 # reverse
-is ip-reverse-address('00.023.255', 4), '255.23.0';
-is ip-reverse-address('042.00.023.255', 4), '255.23.0.42';
+is ip-reverse-address('00.023.255'), '255.23.0';
+is ip-reverse-address('042.00.023.255'), '255.23.0.42';
 
 # conversions
 my $bin = '11000011011100100101000000000000';
