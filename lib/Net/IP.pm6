@@ -4,6 +4,27 @@ use Number::More :bin2dec, :bin2hex, :dec2bin,
                  :hex2bin, :token-binary;
 use Text::More   :count-substrs;
 
+=begin pod
+
+=defn Net::IP
+A tool kit for manipulating IP addresses. 
+
+=head1 Notes
+
+=item This API is not backwardly compatible with previous versions.
+
+=item All but three functions will die if an unknown IP format is presented
+for processing; those exceptions are: C<ip-is-ipv4>, C<ip-is-ipv6>, and C<ip-is-ip>
+which return false if the argument is not known to be the tested version
+or to be a valid IP at all. 
+
+=item IPv6 coverage is not yet complete, but I<ordinary> usage should be possible
+for most user's needs.
+=item All X2ip functions require the IP version (4 or 6) to
+be provided.
+
+=end pod
+
 # export a debug var for users
 our $DEBUG = False;
 BEGIN {
