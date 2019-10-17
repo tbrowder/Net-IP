@@ -521,12 +521,25 @@ sub ip-is-ipv4(Str:D $ip is copy --> Bool) is export(:ip-is-ipv4) {
 #------------------------------------------------------------------------------
 #|{{
 
+Purpose : Check if a string is a valid format of either version
+Params  : IP address
+Returns : True (yes) or False (no)
+
+}}
+sub ip-is-ip(Str:D $ip --> Bool) is export(:ip-is-ip) { 
+    ip-is-ipv4($ip) || ip-is-ipv6($ip);
+} # ip-is-ip
+
+#------------------------------------------------------------------------------
+#|{{
+
 Purpose : Check if an IP address is version 6
 Params  : IP address
 Returns : True (yes) or False (no)
 
 }}
-sub ip-is-ipv6(Str:D $ip is copy --> Bool) is export(:ip-is-ipv6) { # we don't use a constraint on the input here so we
+sub ip-is-ipv6(Str:D $ip is copy --> Bool) is export(:ip-is-ipv6) { 
+    # we don't use a constraint on the input here so we
     # can report specific problems for debugging
 
     # Count octets
