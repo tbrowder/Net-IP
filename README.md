@@ -9,10 +9,9 @@ This module is a beginning port of the Perl module `Net::IP` to the
 
 1. This API is not backwardly compatible with previous versions.
 
-2. All but three functions will die if an unknown IP format is presented
-for processing; those exceptions are: ip-is-ipv4, ip-is-ipv6, and ip-is-ip
-which return false if the argument is not known to be the tested version
-or to be a valid IP at all. 
+2. All but four functions will die if an unknown IP format is presented
+for processing; those exceptions are: ip-get-version, ip-is-ipv4, ip-is-ipv6, and ip-is-ip
+which return false if the argument is not known to satisfy the request. 
 
 3. All X2ip functions require the IP version (4 or 6) to
 be provided.
