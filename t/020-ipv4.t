@@ -4,7 +4,7 @@ use Test;
 use Net::IP :ALL;
 use Number::More :ALL;
 
-plan 23;
+plan 27;
 
 # valid
 ok ip-is-ipv4('10.10.10.10'), '4 octets';
@@ -53,6 +53,5 @@ is ip-ip2int($ip), $int;
 is ip-int2ip($int, 4), $ip;
 
 # more checks
-not-ok ip-is-ip('z'), 'ip?';
+nok ip-is-ip('z'), 'ip?';
 dies-ok { ip-ip2int('-1'); }
-
