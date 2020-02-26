@@ -2,7 +2,7 @@ unit module Net::IP:auth<github:tbrowder>;
 
 use Number::More :bin2dec, :bin2hex, :dec2bin,
                  :hex2bin, :token-binary;
-use Text::More   :count-substrs;
+use Text::Utils  :count-substrs;
 
 =begin pod
 
@@ -19,7 +19,7 @@ which return false if the argument is not known to be the tested version
 or to be a valid IP at all. 
 
 =item IPv6 coverage is not yet complete, but I<ordinary> usage should be possible
-for most user's needs.
+for most users's needs.
 =item All X2ip functions require the IP version (4 or 6) to
 be provided.
 
