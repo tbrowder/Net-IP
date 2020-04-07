@@ -13,7 +13,7 @@
         "bugtracker" : "https://github.com/tbrowder/Net-IP-Perl6/issues"
     },
     "provides"    : {
-        "Net::IP" : "lib/Net/IP.pm6"
+        "Net::IP" : "lib/Net/IP.rakumod"
     },
     "test-depends"     : [
 	"Test::META"
