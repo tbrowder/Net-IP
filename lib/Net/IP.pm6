@@ -7,7 +7,7 @@ use Text::Utils  :count-substrs;
 =begin pod
 
 =defn Net::IP
-A tool kit for manipulating IP addresses. 
+A tool kit for manipulating IP addresses.
 
 =head1 Notes
 
@@ -16,17 +16,18 @@ A tool kit for manipulating IP addresses.
 =item All but three functions will die if an unknown IP format is presented
 for processing; those exceptions are: C<ip-is-ipv4>, C<ip-is-ipv6>, and C<ip-is-ip>
 which return false if the argument is not known to be the tested version
-or to be a valid IP at all. 
+or to be a valid IP at all.
 
 =item IPv6 coverage is not yet complete, but I<ordinary> usage should be possible
-for most users's needs.
+                                             for most users's needs.
+
 =item All X2ip functions require the IP version (4 or 6) to
 be provided.
 
 =end pod
 
 # export a debug var for users
-our $DEBUG = False;
+our $DEBUG = True; # False;
 BEGIN {
     if %*ENV<MyMODULE_DEBUG> {
 	$DEBUG = True;
@@ -98,8 +99,8 @@ Params  : bit string, IP version
 Returns : IP address on success, undef otherwise
 
 }}
-sub ip-bin2ip(Str:D $binip is copy where &binary, 
-              UInt $ip-version where &ip-version 
+sub ip-bin2ip(Str:D $binip is copy where &binary,
+              UInt $ip-version where &ip-version
               --> Str) is export(:ip-bin2ip) {
 
     # Define normal size for address
@@ -157,7 +158,7 @@ Params  : IP address
 Returns : IP address with no unneeded zeroes
 
 }}
-sub ip-remove-leading-zeroes(Str:D $ip is copy 
+sub ip-remove-leading-zeroes(Str:D $ip is copy
                              --> Str) is export(:ip-remove-leading-zeroes) {
 
     my $ip-version = ip-get-version $ip, :die;
@@ -201,7 +202,7 @@ Returns : Compressed IP or die (problem)
 sub ip-compress-address(Str:D $ip is copy
                         --> Str) is export(:ip-compress-address) {
 
-    my $ip-version = ip-get-version $ip, :die; 
+    my $ip-version = ip-get-version $ip, :die;
 
     # already compressed addresses must be expanded first
     $ip = ip-expand-address($ip) if $ip-version == 6;
@@ -526,7 +527,7 @@ Params  : IP address
 Returns : True (yes) or False (no)
 
 }}
-sub ip-is-ip(Str:D $ip --> Bool) is export(:ip-is-ip) { 
+sub ip-is-ip(Str:D $ip --> Bool) is export(:ip-is-ip) {
     ip-is-ipv4($ip) || ip-is-ipv6($ip);
 } # ip-is-ip
 
@@ -538,7 +539,7 @@ Params  : IP address
 Returns : True (yes) or False (no)
 
 }}
-sub ip-is-ipv6(Str:D $ip is copy --> Bool) is export(:ip-is-ipv6) { 
+sub ip-is-ipv6(Str:D $ip is copy --> Bool) is export(:ip-is-ipv6) {
     # we don't use a constraint on the input here so we
     # can report specific problems for debugging
 
@@ -606,7 +607,8 @@ Params  : UInt, IP version
 Returns : IP address
 
 }}
-multi ip-int2ip(UInt:D $int, UInt $ip-version where &ip-version --> Str) is export(:ip-int2ip) {
+multi ip-int2ip(UInt:D $int,
+                UInt $ip-version where &ip-version --> Str) is export(:ip-int2ip) {
     # convert to binary
     my $bin = dec2bin $int;
     # convert to IP
@@ -620,7 +622,7 @@ Params  : IP address
 Returns : Int
 
 }}
-sub ip-ip2int(Str:D $ip --> UInt) is export(:ip-int2ip) {
+sub ip-ip2int(Str:D $ip --> UInt) is export(:ip-ip2int) {
     # convert to binary
     my $bin = ip-ip2bin $ip;
     # convert to int

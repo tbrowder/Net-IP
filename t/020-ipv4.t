@@ -4,7 +4,7 @@ use Test;
 use Net::IP :ALL;
 use Number::More :ALL;
 
-plan 27;
+plan 29;
 
 # valid
 ok ip-is-ipv4('10.10.10.10'), '4 octets';
@@ -43,6 +43,10 @@ is ip-compress-address('00.023.255'), '0.23.255';
 # reverse
 is ip-reverse-address('00.023.255'), '255.23.0';
 is ip-reverse-address('042.00.023.255'), '255.23.0.42';
+
+# iptobin
+is   ip-ip2bin('9.9.9.9'), '00001001000010010000100100001001';
+isnt ip-ip2bin('9.9.9.9'), '11000011011100101010101010100101';
 
 # conversions
 my $bin = '11000011011100100101000000000000';

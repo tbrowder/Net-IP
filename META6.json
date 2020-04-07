@@ -1,7 +1,7 @@
 {
     "perl"        : "6.*",
     "name"        : "Net::IP",
-    "version"     : "2.1.0" ,
+    "version"     : "2.1.1" ,
     "api"         : "2",
     "description" : "Provides utility functions for dealing with IPv4 and IPv6 addresses.",
     "auth"        : "github:tbrowder",
