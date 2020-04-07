@@ -3,10 +3,11 @@
 - changed API, not backwardly compatible
     + eliminate requirement to specify IP
       version when first argument is an IP in standard form
-    + changed function names to use "2" instead of "to"
+    + change function names to use "2" instead of "to"
     + add two new tests subitted as PR # 1 by `@lucasvalle` for
       `ip-ip2bin` (but modified for the new API and sub naming
       convention)
+    + change module file suffix to `rakumod`
 
 # 2019-10-15
 - v1.1.0
