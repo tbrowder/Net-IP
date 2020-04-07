@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/tbrowder/Net-IP-Perl6.svg?branch=master)](https://travis-ci.org/tbrowder/Net-IP-Perl6)
+[![Build Status](https://travis-ci.com/tbrowder/Net-IP-Perl6.svg?branch=master)](https://travis-ci.com/tbrowder/Net-IP-Perl6)
 
 # Net::IP (API version 2)
 
