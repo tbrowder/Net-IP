@@ -8,6 +8,7 @@
       `ip-ip2bin` (but modified for the new API and sub naming
       convention)
     + change module file suffix to `rakumod`
+    + add Windows testing with `appveyor.yml`
 
 # 2019-10-15
 - v1.1.0
