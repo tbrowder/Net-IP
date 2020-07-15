@@ -1,5 +1,12 @@
+# 2020-07-15
+- v2.1.2
+- Turned off $DEBUG in IP.rakumod (thanks to Demayl, issue #3)
+- Added test for $Net::IP::DEBUG being on 
+- Rakuize (Perl6 => Raku)
+- Renamed Github repo (Net-IP-Perl6 => Net-IP)
+
 # 2020-04-07
-- v2.0.0
+- v2.1.1
 - changed API, not backwardly compatible
     + eliminate requirement to specify IP
       version when first argument is an IP in standard form

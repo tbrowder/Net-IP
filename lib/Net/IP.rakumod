@@ -27,7 +27,7 @@ be provided.
 =end pod
 
 # export a debug var for users
-our $DEBUG = True; # False;
+our $DEBUG = False;
 BEGIN {
     if %*ENV<MyMODULE_DEBUG> {
 	$DEBUG = True;

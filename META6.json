@@ -1,16 +1,16 @@
 {
     "perl"        : "6.*",
     "name"        : "Net::IP",
-    "version"     : "2.1.1" ,
+    "version"     : "2.1.2" ,
     "api"         : "2",
     "description" : "Provides utility functions for dealing with IPv4 and IPv6 addresses.",
     "auth"        : "github:tbrowder",
     "author"      : "github:tbrowder",
     "authors"     : [ "Tom Browder <tom.browder@gmail.com>" ],
     "license"     : "Artistic-2.0",
-    "source-url"  : "https://github.com/tbrowder/Net-IP-Perl6.git",
+    "source-url"  : "https://github.com/tbrowder/Net-IP.git",
     "support"     : {
-        "bugtracker" : "https://github.com/tbrowder/Net-IP-Perl6/issues"
+        "bugtracker" : "https://github.com/tbrowder/Net-IP/issues"
     },
     "provides"    : {
         "Net::IP" : "lib/Net/IP.rakumod"

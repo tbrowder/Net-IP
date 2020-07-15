@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/tbrowder/Net-IP-Perl6.svg?branch=master)](https://travis-ci.com/tbrowder/Net-IP-Perl6)
+[![Build Status](https://travis-ci.com/tbrowder/Net-IP.svg?branch=master)](https://travis-ci.com/tbrowder/Net-IP)
 
 # Net::IP (API version 2)
 
@@ -43,6 +43,6 @@ COPYRIGHT & LICENSE
 Copyright (c) 2018-2020 Tom Browder, all rights reserved.
 
 This program is free software; you can redistribute it or modify
-it under the same terms as Perl 6 itself.
+it under the same terms as Raku itself.
 
 See that license [here](./LICENSE).

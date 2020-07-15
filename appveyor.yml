@@ -21,7 +21,7 @@ install:
 build: off
 
 test_script:
-  - set AUTHOR_TESTING=1 && prove -ve "perl6 -I."
+  - set AUTHOR_TESTING=1 && prove -ve "raku -I."
   - zef install .
 
 shallow_clone: true
